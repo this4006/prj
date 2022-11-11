@@ -1,0 +1,33 @@
+{% extends 'users/userbase.html'%}
+{% load static %}
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+        padding-top: 10rem;
+    }
+    table td {
+        border: 2px solid burlywood;
+        width: 100px;
+        margin-right: auto;
+        margin-right: auto;
+        padding-left: 100px;
+    }
+    thead  {
+        border: 3px solid green;
+    }
+</style>
+<div class="container">
+    <center>
+        <h1>KNeighborsClassifier Result</h1>
+        <h2>Accuracy: <font color="RED">{{accuracy}}</font> </h2>
+        <h2>precision: <font color="RED">{{precission}}</font> </h2>
+        <h2>F1 score: <font color="RED">{{f1_score}}</font> </h2>
+        <h2>Recall: <font color="RED">{{recall}}</font> </h2>
+
+    </center>
+    
+
+   
+</div>
+{% endblock %}

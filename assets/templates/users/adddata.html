@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'users/userbase.html'%}
+{% load static %}
+{% block content %}
+<html lang="en">
+<style>
+	h1 {
+		text-align: center;
+		color:black;
+		padding-top: 150px;
+	}
+	.container{
+		border-radius: 6px ;
+	}
+</style>
+<style> 
+	input[type=button], input[type=submit], input[type=reset] {
+	  background-color: #04AA6D;
+	  border: none;
+	  color: white;
+	  padding: 16px 32px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
+
+	</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 style="color: aqua;">Scholarship Eligible Criteria</h1>
+	<div class="container" style="width: 505px">
+		<div class="jumbotron" style="background:black">
+			<form action="{% url 'Adddata' %}" method="POST" class="text-primary" style="width: 100%;" ALIGN="center" >
+				{% csrf_token %}
+				<label><b>Percentage<b></label><br>
+				<input type="number" name="percentage" placeholder="89%" min="0" max="100"><br><br>
+				<label><b>Grade Point Average(%)<b></label><br>
+				<input type="number" name="grade_point_average" placeholder="9.2" min="0" max="10"><br><br>
+				<label><b>Marks</b></label><br>
+				<input type="number" name="marks" placeholder="92" min="0" max="600"><br><br>
+				<label><b>Annual Income</b></label><br>
+				<input type="number" name="annual_income" placeholder="100000"><br><br>
+				<label>Communication Skills</label></br>
+				<select name="communication_skills">
+					<option value=0>Bad</option>
+					<option value=1>Average</option>
+					<option value=2>Good</option>
+				</select></br></br>
+				
+				<input type="Submit" class="btn btn-primary btn-lg"value="Predict">
+		
+			</form>
+		</div>
+	</div>
+    
+	<h3 style="text-align: center;">{{msg}}</h3>
+</body>
+</html>
+{%endblock%}
